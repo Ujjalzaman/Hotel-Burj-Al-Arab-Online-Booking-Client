@@ -14,6 +14,7 @@ import LocalHotelIcon from '@material-ui/icons/LocalHotel';
 import WcIcon from '@material-ui/icons/Wc';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import { useHistory } from 'react-router-dom';
+import Fade from 'react-reveal/Fade';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,43 +47,41 @@ export default function Room({ room }) {
     history.push(`/book/${bedType}`);
   }
   return (
-    <div className="container">
-      <Card className={classes.root}>
-        <CardHeader
-          avatar={
-            <Avatar aria-label="recipe" className={classes.avatar}>
-              {room.avatar}
-            </Avatar>
-          }
-          title={room.title}
-        />
+<Card className={classes.root}>
+      <CardHeader
+        avatar={
+          <Avatar aria-label="recipe" className={classes.avatar}>
+            {room.avatar}
+          </Avatar>
+        }
+        title={room.title}
+      />
 
-        <CardMedia
-          className={classes.media}
-          image={room.imgUrl}
-          title="Paella dish"
-        />
-        <img src={`/images/${room.bedType}.png`} alt="" />
-        <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {room.description}
-          </Typography>
-        </CardContent>
-        <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
-            <LocalHotelIcon />: {room.bed}
-          </IconButton>
-          <IconButton aria-label="share">
-            <WcIcon />: {room.capacity}
-          </IconButton>
-          <IconButton aria-label="price">
-            <AttachMoneyIcon />: {room.price}
-          </IconButton>
-          <Button onClick={() => handleBook(room.bedType)} variant="contained" color="primary">
-            Book
+      <CardMedia
+        className={classes.media}
+        image={room.imgUrl}
+        title="Paella dish"
+      />
+      <img src={`/images/${room.bedType}.png`} alt=""/>
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {room.description}
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton aria-label="add to favorites">
+          <LocalHotelIcon />: {room.bed} 
+        </IconButton>
+        <IconButton aria-label="share">
+          <WcIcon />: {room.capacity} 
+        </IconButton>
+        <IconButton aria-label="price">
+          <AttachMoneyIcon />: {room.price} 
+        </IconButton>
+        <Button onClick={() => handleBook(room.bedType)} variant="contained" color="primary">
+          Book
         </Button>
-        </CardActions>
-      </Card>
-    </div>
+      </CardActions>
+    </Card>
   );
 }

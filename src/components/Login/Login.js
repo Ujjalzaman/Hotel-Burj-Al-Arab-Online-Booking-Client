@@ -58,7 +58,7 @@ const Login = () => {
     }
     return (
 
-        <div>
+        <div className="login">
             <Nav/>
             <div className="login-page container">
                 <div className="row align-items-center" style={{ height: "100vh" }}>

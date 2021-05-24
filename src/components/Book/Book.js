@@ -48,9 +48,11 @@ const Book = () => {
             <Header></Header>
 
             <div style={{ textAlign: 'center' }}>
-                <h2>logged as {loggedInUser.name}</h2>
-                <h1>Let's book a {bedType} Room.</h1>
-                <p>Want a <Link to="/home">different room?</Link> </p>
+                <div className="container p-5 mb-5">
+                    <h2>Hey! {loggedInUser.name}</h2>
+                    <h1>Let's book a {bedType} Room.</h1>
+                    <p>Want a <Link to="/home">different room?</Link> </p>
+                </div>
 
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>
                     <Grid container justify="space-around">
@@ -81,7 +83,7 @@ const Book = () => {
 
                     </Grid>
                     <Button onClick={handleBooking} variant="contained" color="primary">
-                        Book
+                        Book Now
                     </Button>
 
                 </MuiPickersUtilsProvider>
